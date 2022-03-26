@@ -30,4 +30,7 @@ export default defineConfig({
       // options are passed on to @vue/babel-plugin-jsx
     }),
   ],
+  build: {
+    sourcemap: 'inline'
+  }
 });
