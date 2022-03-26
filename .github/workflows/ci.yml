@@ -32,7 +32,7 @@ jobs:
         VITE_BAIDU_API_KEY: ${{ secrets.VITE_BAIDU_API_KEY }}
         VITE_BAIDU_SECRET_KEY: ${{ secrets.VITE_BAIDU_SECRET_KEY }}
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      run: node ./updateToken.js | npx vercel env add VITE_APP_BAIDU_KEY production -t $VERCEL_TOKEN > /dev/null
+      run: node ./updateToken.js | npx vercel env add VITE_APP_BAIDU_KEY production -t $VERCEL_TOKEN
       
     - name: Deploy
       env:
