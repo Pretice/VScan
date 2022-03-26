@@ -94,7 +94,7 @@ const WebcamCapture = defineComponent({
           webcamRef.value.start()
         }, 0);
       }
-    })
+    }) 
 
     const camRef = computed(() =>
       props.camConstraints === videoConstraints ? 1 : 0
@@ -307,7 +307,7 @@ const WebcamCapture = defineComponent({
           </div>
           <div key="streaming">
             <button
-              class={`capture-btn ${shouldShowCapture ? '' : 'hidden'}`}
+              class={`capture-btn ${props.shouldShowCapture ? '' : 'hidden'}`}
               onClick={capture}
             />
           </div>
