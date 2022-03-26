@@ -28,7 +28,7 @@ jobs:
     - name: Delete old Baidu Token
       env: 
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      run: echo 'y' | npx vercel env rm VITE_APP_BAIDU_KEY -t $VERCEL_TOKEN
+      run: echo 'y' | npx vercel env rm VITE_APP_BAIDU_KEY -t $VERCEL_TOKEN > /dev/null
 
     - name: Generate new Baidu Token and update
       env:
