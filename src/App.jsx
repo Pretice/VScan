@@ -92,7 +92,7 @@ const WebcamCapture = defineComponent({
       if (props.camConstraints && webcamRef.value) {
         setTimeout(() => {
           webcamRef.value.start()
-        }, 0);
+        }, 20);
       }
     }) 
 
