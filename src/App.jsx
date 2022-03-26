@@ -283,7 +283,6 @@ const WebcamCapture = defineComponent({
                   <Webcam //使用前置
                     constraints={{ video: frontVideoConstraints, audio: false }}
                     ref={webcamRef}
-                    autoplay
                     onLoadedMetadata={() => (videoLoaded.value = true)}
                   />
                   <canvas class="face__overlay" />
