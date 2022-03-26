@@ -35,9 +35,11 @@ import {
 import {
   computed,
   defineComponent,
+  onMounted,
   ref,
   shallowRef,
   watchEffect,
+  getCurrentInstance
 } from 'vue';
 
 const apiList = [
@@ -80,6 +82,19 @@ const WebcamCapture = defineComponent({
 
     const webcamRef = ref();
     const cropperRef = shallowRef();
+
+    onMounted(() => {
+      // console.log('video: ',ctx.$refs.webcamRef.video)
+      // console.log('video: ',getCurrentInstance().ctx.$refs.webcamRef.video)
+    })
+
+    watchEffect(() => {
+      if (props.camConstraints && webcamRef.value) {
+        setTimeout(() => {
+          webcamRef.value.start()
+        }, 0);
+      }
+    })
 
     const camRef = computed(() =>
       props.camConstraints === videoConstraints ? 1 : 0
